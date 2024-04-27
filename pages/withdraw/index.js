@@ -62,6 +62,13 @@ Page({
       })
       return
     }
+    if (amount % 100 != 0) {
+      wx.showToast({
+        title: '提现金额为100的整数倍',
+        icon: 'none',
+      })
+      return
+    }
     if (amount * 1 > 2000) {
       if (!this.data.name) {
         wx.showToast({
